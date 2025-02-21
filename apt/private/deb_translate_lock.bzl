@@ -193,8 +193,8 @@ def _deb_translate_lock_impl(rctx):
                 src = '"@%s//:data"' % repo_name,
                 deps = starlark_codegen_utils.to_list_attr([
                     "//%s/%s" % (dep["name"], package["arch"])
-                    if dep["name"] != package["name"]
                     for dep in package["dependencies"]
+                    if dep["name"] != package["name"]
                 ]),
                 urls = package["urls"],
                 name = package["name"],
